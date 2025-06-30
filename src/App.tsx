@@ -550,14 +550,6 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               >
                 Contact
               </button>
-              <a 
-                href="https://www.styner.dev/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white hover:text-green-400 transition-colors"
-              >
-                My Website
-              </a>
             </nav>
           </div>
 
@@ -615,7 +607,8 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <Button
                 variant="outline"
                 size="sm"
-                className="border-gray-600 text-white bg-transparent text-xs h-7 whitespace-nowrap"
+                className="border-gray-600 text-white bg-transparent text-xs h-7 whitespace-nowrap hover:bg-gray-700 transition-colors"
+                onClick={() => window.open('https://www.styner.dev/', '_blank')}
               >
                 My Website
               </Button>
