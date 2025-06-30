@@ -1147,6 +1147,15 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                       </div>
                     </div>
 
+                    {/* Digital Footprint Hub Logo */}
+                    <div className="mt-4 flex justify-center">
+                      <img
+                        src="https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/white_circle_360x360%20(2).png"
+                        alt="Digital Footprint Hub Logo"
+                        className="w-20 h-20 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+
                     {/* Chat Messages Display (Read-only) */}
                     {avatarMessages.length > 0 && (
                       <div className="chat-display mt-4">
@@ -1367,12 +1376,13 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               </button>
             </div>
           </div>
-
+   className="group cursor-pointer"
+            
           {/* YouTube Thumbnails Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Video 1 */}
             <a
-              href="https://youtu.be/_6hKErybcBo?si=froyQ9qwT6ux6_Po"
+              href="https://www.youtube.com/watch?v=_6hKErybcBo"
               target="_blank"
               rel="noopener noreferrer"
               className="group cursor-pointer"
@@ -1410,7 +1420,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
 
             {/* Video 2 */}
             <a
-              href="https://youtu.be/_6hKErybcBo?si=froyQ9qwT6ux6_Po"
+              href="https://youtu.be/GGrWRJfe9So?si=RYhiqmvv30qT0VM4"
               target="_blank"
               rel="noopener noreferrer"
               className="group cursor-pointer"
@@ -1418,7 +1428,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <div className="relative bg-[#161616] rounded-lg overflow-hidden border border-[#2a2a2a] hover:border-orange-500 transition-all duration-300 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-orange-500/20 hover:-translate-y-2">
                 <div className="aspect-video relative overflow-hidden">
                   <img
-                    src="https://img.youtube.com/vi/_6hKErybcBo/maxresdefault.jpg"
+                    src="https://img.youtube.com/vi/GGrWRJfe9So/maxresdefault.jpg"
                     alt="Fake Investment Romance Scam Exposed"
                     className="w-full h-full object-cover"
                   />
@@ -1448,7 +1458,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
 
             {/* Video 3 */}
             <a
-              href="https://youtu.be/_6hKErybcBo?si=froyQ9qwT6ux6_Po"
+              href="https://youtu.be/K4KIh-aVueQ?si=59hTabqMCxDfrCC1"
               target="_blank"
               rel="noopener noreferrer"
               className="group cursor-pointer"
@@ -1456,7 +1466,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <div className="relative bg-[#161616] rounded-lg overflow-hidden border border-[#2a2a2a] hover:border-green-500 transition-all duration-300 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-green-500/20 hover:-translate-y-2">
                 <div className="aspect-video relative overflow-hidden">
                   <img
-                    src="https://img.youtube.com/vi/_6hKErybcBo/maxresdefault.jpg"
+                    src="https://img.youtube.com/vi/K4KIh-aVueQ/maxresdefault.jpg"
                     alt="10 Red Flags of Romance Scammers"
                     className="w-full h-full object-cover"
                   />
