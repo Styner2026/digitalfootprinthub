@@ -498,6 +498,18 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
 
   // Voice conversation functions removed - display only mode
 
+  // Smooth scroll function for navigation
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-dark-bg" onClick={handleClickOutside}>
       {/* Top Navigation Bar - Rounded and contained with dividers */}
@@ -773,7 +785,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                         </div>
 
                         {/* Examples - Horizontal Layout in Pairs */}
-                        <div className="mb-12">
+                        <div id="features" className="mb-12">
                           <div className="flex items-center justify-center space-x-2 mb-8">
                             <Lightbulb className="w-5 h-5 text-white" />
                             <span className="text-lg font-medium text-white">Investigation Examples</span>
@@ -1147,13 +1159,21 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                       </div>
                     </div>
 
-                    {/* Digital Footprint Hub Logo */}
+                    {/* Digital Footprint Hub Logo with Pulsating Animation */}
                     <div className="mt-4 flex justify-center">
-                      <img
-                        src="https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/white_circle_360x360%20(2).png"
-                        alt="Digital Footprint Hub Logo"
-                        className="w-20 h-20 opacity-70 hover:opacity-100 transition-opacity duration-300"
-                      />
+                      <div className="relative">
+                        {/* Wave/Echo Effect Rings */}
+                        <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/20 animate-ping"></div>
+                        <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/10 animate-ping animation-delay-150"></div>
+                        <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/5 animate-ping animation-delay-300"></div>
+                        
+                        {/* Logo */}
+                        <img
+                          src="https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/white_circle_360x360%20(2).png"
+                          alt="Digital Footprint Hub Logo"
+                          className="w-28 h-28 opacity-70 hover:opacity-100 transition-opacity duration-300 animate-pulse relative z-10"
+                        />
+                      </div>
                     </div>
 
                     {/* Chat Messages Display (Read-only) */}
@@ -1294,7 +1314,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                         <div className="w-32 h-32 bg-gradient-to-br from-resolved to-medium-risk rounded-full mx-auto mb-6 flex items-center justify-center">
                           <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
                             <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                              <path d="M8,5.14V19.14L19,12.14L8,5.14z" />
                             </svg>
                           </div>
                         </div>
@@ -1308,7 +1328,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="w-20 h-20 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/40 transition-all duration-300">
                           <svg className="w-8 h-8 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                            <path d="M8,5.14V19.14L19,12.14L8,5.14z" />
                           </svg>
                         </div>
                       </div>
@@ -1376,8 +1396,8 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               </button>
             </div>
           </div>
-   className="group cursor-pointer"
-            
+          className="group cursor-pointer"
+
           {/* YouTube Thumbnails Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Video 1 */}
@@ -1714,6 +1734,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
         <div className="max-w-7xl mx-auto px-8">
           {/* Live Analytics Feed */}
           <div
+            id="global-alerts"
             className="bg-[#161616] border border-[#2a2a2a] rounded-lg p-6 shadow-dark-medium"
           >
             <div className="flex items-center justify-between mb-6">
@@ -1844,7 +1865,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
       </div>
 
       {/* FAQs About Digital Footprint Hub */}
-      <div className="py-16 bg-dark-bg">
+      <div id="about" className="py-16 bg-dark-bg">
         <div className="max-w-7xl mx-auto px-8">
           {/* FAQ Container Box with Dropdown */}
           <div className="bg-[#2a2a2a] rounded-2xl border border-[#3a3a3a] shadow-2xl shadow-black/50 hover:shadow-3xl hover:shadow-black/60 transition-all duration-500 relative overflow-hidden">
@@ -1977,7 +1998,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                 </div>
 
                 {/* Additional Help Section - Inside the dropdown */}
-                <div className="mt-8">
+                <div id="contact" className="mt-8">
                   <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#2a2a2a] shadow-xl shadow-black/40 max-w-2xl mx-auto relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 via-blue-500/10 to-purple-500/15 rounded-xl"></div>
                     <div className="relative z-10 text-center">
