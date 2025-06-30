@@ -1528,348 +1528,173 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
         </div>
       </div>
 
-      {/* Dating & Relationship Safety Section - Enhanced with Premium 2D Effects */}
-      <div className="py-16 bg-dark-bg">
+      {/* Blockchain Verification Dashboard - NEW NODELY INTEGRATION */}
+      <div className="py-8 bg-dark-bg">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="mb-16">
-            <div className="bg-[#2a2a2a] rounded-2xl p-8 border border-[#3a3a3a] shadow-2xl shadow-black/50 hover:shadow-3xl hover:shadow-black/60 transition-all duration-500 relative overflow-hidden">
-              {/* Subtle background gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#4dd0e1]/5 rounded-2xl"></div>
-
-              {/* Header */}
-              <div className="mb-8 relative z-10 text-center">
-                <h1 className="text-3xl font-semibold mb-2">
-                  <span className="text-[#d4af37] drop-shadow-lg">🎵 Stay Safe, Stay Smart</span>
-                </h1>
-                <p className="text-[#a0a0a0] text-lg font-light">
-                  Your Dating Safety Anthem
-                </p>
-              </div>
-
-              {/* Main Content */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
-                {/* Left Section - Song Lyrics */}
-                <div className="space-y-4">
-                  {/* Safety Information Box with Rectangular Border - Fixed Height */}
-                  <div className="border-2 border-[#4a4a4a] rounded-lg p-6 bg-[#1f1f1f]/50 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-[#d4af37]/10 transition-all duration-300 hover:border-[#d4af37]/50 h-[280px] flex flex-col">
-                    <div className="text-[#808080] text-sm font-medium mb-6">🎵 Song Lyrics</div>
-                    <div className="text-[#b0b0b0] leading-relaxed flex-1 flex flex-col justify-center">
-                      <div className="rotating-lyrics transition-all duration-500 ease-in-out">
-                        <p className="mb-3 whitespace-pre-line text-center">
-                          <em>{songLyrics[currentLyricIndex].verse}</em>
-                        </p>
-
-                        <p className="text-[#d4af37] text-sm font-medium text-center">
-                          {songLyrics[currentLyricIndex].attribution}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Section - Audio Guide */}
-                <div className="space-y-4">
-                  {/* Audio Guide Box with Rectangular Border - Fixed Height */}
-                  <div className="border-2 border-[#4a4a4a] rounded-lg p-6 bg-[#1f1f1f]/50 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-[#4dd0e1]/10 transition-all duration-300 hover:border-[#4dd0e1]/50 h-[280px] flex flex-col">
-                    <div className="text-[#808080] text-sm font-medium mb-3">🎧 Audio Guide</div>
-
-                    {/* Title with Navigation Arrows */}
-                    <div className="flex items-center justify-center mb-4 space-x-4">
-                      <button
-                        className="p-2 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] border border-[#4a4a4a] transition-all duration-300 hover:shadow-lg hover:shadow-[#4dd0e1]/20 hover:-translate-y-0.5"
-                        title="Previous version"
-                        aria-label="Previous song version"
-                        onClick={() => setCurrentSongVersion((prev) => (prev - 1 + songVersions.length) % songVersions.length)}
-                      >
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 111.414-1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </button>
-
-                      <div className="text-white text-xl font-semibold text-center">
-                        Listen & Learn
-                        <div className="text-xs text-[#4dd0e1] font-normal mt-1">
-                          {songVersions[currentSongVersion].name} ({currentSongVersion + 1} of {songVersions.length})
-                        </div>
-                      </div>
-
-                      <button
-                        className="p-2 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] border border-[#4a4a4a] transition-all duration-300 hover:shadow-lg hover:shadow-[#4dd0e1]/20 hover:-translate-y-0.5"
-                        title="Next version"
-                        aria-label="Next song version"
-                        onClick={() => setCurrentSongVersion((prev) => (prev + 1) % songVersions.length)}
-                      >
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </button>
-                    </div>
-
-                    {/* Audio Player - Enhanced with Premium Effects */}
-                    <div className="bg-[#1a1a1a] rounded-lg p-4 border border-[#3a3a3a] shadow-xl shadow-black/40 hover:shadow-2xl hover:shadow-[#4dd0e1]/20 transition-all duration-300 hover:-translate-y-0.5 relative overflow-hidden mb-4">
-                      {/* Subtle inner glow */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#4dd0e1]/5 to-transparent rounded-lg"></div>
-
-                      {/* Hidden audio element */}
-                      <audio
-                        ref={audioRef}
-                        onEnded={handleAudioEnded}
-                        preload="metadata"
-                      >
-                        <source src={songVersions[currentSongVersion].url} type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                      </audio>
-
-                      <div className="flex items-center space-x-4 relative z-10">
-                        <button
-                          className="bg-[#1a1a1a] hover:bg-[#2a2a2a] rounded-full p-3 transition-all duration-300 border border-[#3a3a3a] shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-[#4dd0e1]/20 hover:-translate-y-0.5 hover:scale-105"
-                          onClick={togglePlayPause}
-                          title={isPlaying ? "Pause dating safety audio guide" : "Play dating safety audio guide"}
-                          aria-label={isPlaying ? "Pause dating safety audio guide" : "Play dating safety audio guide"}
-                        >
-                          {isPlaying ? (
-                            <Pause className="w-5 h-5 text-white fill-white drop-shadow-sm" />
-                          ) : (
-                            <Play className="w-5 h-5 text-white fill-white drop-shadow-sm" />
-                          )}
-                        </button>
-
-                        {/* Waveform Visualization - Enhanced */}
-                        <div className={`flex-1 flex items-center justify-center h-12 bg-[#0f0f0f] rounded overflow-hidden shadow-inner border border-[#2a2a2a]/50 relative ${isPlaying ? 'waveform-playing' : ''}`}>
-                          {/* Subtle background gradient */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-[#4dd0e1]/10 via-transparent to-[#4dd0e1]/10"></div>
-
-                          <div className="flex items-end space-x-0.5 h-8 w-full justify-center relative z-10">
-                            {Array.from({ length: 80 }).map((_, i) => (
-                              <div
-                                key={i}
-                                className="dating-waveform-bar"
-                                data-height={Math.random() * 70 + 15}
-                                data-opacity={Math.random() * 0.5 + 0.5}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="text-[#b0b0b0] leading-relaxed text-center flex-1 flex items-center justify-center text-sm">
-                      {songVersions[currentSongVersion].description}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Digital Footprint Protection Banner - Exact Color Match */}
-      <div className="py-16 bg-dark-bg">
-        <div className="max-w-7xl mx-auto px-8">
-          <div
-            className="relative rounded-2xl overflow-hidden bg-golden-gradient min-h-[400px]"
-          >
-            {/* Background decorative elements - golden stars */}
-            <div className="absolute inset-0">
-              <div className="absolute top-16 right-32 w-1 h-1 bg-white/60 rounded-full"></div>
-              <div className="absolute top-24 right-48 w-1 h-1 bg-white/40 rounded-full"></div>
-              <div className="absolute top-32 right-40 w-1 h-1 bg-white/70 rounded-full"></div>
-              <div className="absolute bottom-24 right-56 w-1 h-1 bg-white/50 rounded-full"></div>
-            </div>
-
-            <div className="relative flex items-center h-full">
-              {/* Left side - Text content */}
-              <div className="flex-1 p-12 pr-8">
-                <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
-                  Unlock Your Safety with
-                  <br />
-                  Digital Footprint Hub
-                </h2>
-
-                <p className="text-white/90 text-base mb-4 leading-relaxed">
-                  Digital Footprint Hub makes personal safety verification easier than ever with AI-powered tools that
-                  transform names, profiles, and social media into comprehensive background reports in seconds. Whether
-                  you're dating, hiring, or investing, our AI verification and scam detection helps you make informed
-                  decisions effortlessly—no investigative skills required.
-                </p>
-
-                <p className="text-white/90 text-base mb-4 leading-relaxed">
-                  Digital Footprint Hub helps you save time and stay safe while providing you with a vast library of
-                  verification tools, customizable search options, and multilingual support. Whether you're checking
-                  someone's background, verifying social media profiles, or exploring red flags, Digital Footprint Hub
-                  is your go-to tool for unlocking unlimited protective potential.
-                </p>
-
-                <p className="text-white/90 text-base leading-relaxed">
-                  Start your safety journey today and discover how Digital Footprint Hub revolutionizes personal
-                  verification—making it faster, easier, and more accessible than ever before.
-                </p>
-              </div>
-
-              {/* Right side - Image with warm lighting */}
-              <div className="flex-1 relative h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-yellow-500/30 to-amber-400/20 rounded-r-2xl"></div>
-
-                {/* Main verification visual with warm golden tones */}
-                <div className="relative h-full flex items-center justify-center p-8">
-                  <div className="relative">
-                    {/* Person using computer for verification with golden lighting */}
-                    <div className="w-80 h-80 bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-500 rounded-full flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-black/10"></div>
-                      <div className="relative text-center text-white">
-                        <Shield className="w-20 h-20 mx-auto mb-4" />
-                        <div className="text-lg font-semibold">VERIFICATION</div>
-                        <div className="text-lg font-semibold">COMPLETE</div>
-                      </div>
-                    </div>
-
-                    {/* Floating verification status card with warm theme */}
-                    <div className="absolute top-8 left-8 bg-black/80 backdrop-blur-sm rounded-lg p-3 border border-amber-400/50">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                        <span className="text-amber-300 text-sm font-medium">Background Check</span>
-                      </div>
-                      <div className="text-white text-xs">Safety Score: 9.2/10</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Live Google Analytics Scam Dashboard */}
-      <div className="py-16 bg-dark-bg">
-        <div className="max-w-7xl mx-auto px-8">
-          {/* Live Analytics Feed */}
-          <div
-            id="global-alerts"
-            className="bg-[#161616] border border-[#2a2a2a] rounded-lg p-6 shadow-dark-medium"
-          >
+          <div className="bg-[#161616] border border-[#2a2a2a] rounded-lg p-6 shadow-dark-medium">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-white font-semibold text-lg">Live Scam Detection Feed</h3>
-              <div className="flex items-center space-x-4">
-                <select
-                  className="bg-[#2a2a2a] text-white text-sm rounded px-3 py-1 border border-[#404040]"
-                  aria-label="Filter scam detection by platform"
-                >
-                  <option>All Platforms</option>
-                  <option>Dating Apps</option>
-                  <option>Social Media</option>
-                  <option>Email</option>
-                </select>
-                <button className="bg-green-500 hover:bg-green-600 text-black px-4 py-1 rounded text-sm font-medium">
-                  Export Data
-                </button>
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+                <h3 className="text-white font-semibold text-lg">Blockchain Verification Hub</h3>
+                <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
+                  Powered by Nodely + Algorand
+                </span>
+              </div>
+              <div className="flex items-center space-x-2 text-xs text-gray-400">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span>Live on MainNet</span>
               </div>
             </div>
 
-            <div className="space-y-4">
-              {/* Live Feed Item 1 */}
-              <div className="flex items-center space-x-4 p-4 bg-[#161616] rounded-lg border-l-4 border-red-500">
-                <div className="flex-shrink-0">
-                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-2">
-                    <span className="text-red-400 font-semibold">CRITICAL ALERT</span>
-                    <span className="text-gray-400 text-sm">2 seconds ago</span>
-                    <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs">Romance Scam</span>
+            {/* Blockchain Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-400 text-xs">Verified Records</p>
+                    <p className="text-white text-lg font-semibold">2,847</p>
                   </div>
-                  <p className="text-white text-sm">
-                    New romance investment scam detected on Tinder - 47 users at risk
-                  </p>
-                  <div className="flex items-center space-x-4 mt-2 text-xs text-gray-400">
-                    <span>📍 Location: Global</span>
-                    <span>👥 Affected: 47 users</span>
-                    <span>💰 Avg Loss: $2,340</span>
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-blue-400" />
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-white font-bold">98.7%</div>
-                  <div className="text-gray-400 text-xs">Confidence</div>
+              </div>
+              
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-400 text-xs">IPFS Documents</p>
+                    <p className="text-white text-lg font-semibold">1,293</p>
+                  </div>
+                  <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center">
+                    <Brain className="w-4 h-4 text-purple-400" />
+                  </div>
                 </div>
               </div>
 
-              {/* Live Feed Item 2 */}
-              <div className="flex items-center space-x-4 p-4 bg-[#161616] rounded-lg border-l-4 border-orange-500">
-                <div className="flex-shrink-0">
-                  <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-2">
-                    <span className="text-orange-400 font-semibold">HIGH RISK</span>
-                    <span className="text-gray-400 text-sm">15 seconds ago</span>
-                    <span className="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs">Crypto Scam</span>
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-400 text-xs">Smart Contracts</p>
+                    <p className="text-white text-lg font-semibold">47</p>
                   </div>
-                  <p className="text-white text-sm">
-                    Fake crypto recovery service spreading across LinkedIn and Twitter
-                  </p>
-                  <div className="flex items-center space-x-4 mt-2 text-xs text-gray-400">
-                    <span>📍 Location: US, UK, CA</span>
-                    <span>👥 Affected: 23 users</span>
-                    <span>💰 Avg Loss: $5,670</span>
+                  <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                    <Settings className="w-4 h-4 text-green-400" />
                   </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-white font-bold">94.2%</div>
-                  <div className="text-gray-400 text-xs">Confidence</div>
                 </div>
               </div>
 
-              {/* Live Feed Item 3 */}
-              <div className="flex items-center space-x-4 p-4 bg-[#161616] rounded-lg border-l-4 border-yellow-500">
-                <div className="flex-shrink-0">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-2">
-                    <span className="text-yellow-400 font-semibold">MEDIUM RISK</span>
-                    <span className="text-gray-400 text-sm">1 minute ago</span>
-                    <span className="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-xs">Fake Profile</span>
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-gray-400 text-xs">Trust Score</p>
+                    <p className="text-white text-lg font-semibold">98.2%</p>
                   </div>
-                  <p className="text-white text-sm">
-                    Suspicious profile verification requests detected on professional networks
-                  </p>
-                  <div className="flex items-center space-x-4 mt-2 text-xs text-gray-400">
-                    <span>📍 Location: EU</span>
-                    <span>👥 Affected: 12 users</span>
-                    <span>💰 Avg Loss: $890</span>
+                  <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                    <AlertTriangle className="w-4 h-4 text-yellow-400" />
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-white font-bold">87.5%</div>
-                  <div className="text-gray-400 text-xs">Confidence</div>
+              </div>
+            </div>
+
+            {/* Blockchain Features */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Immutable Scam Records */}
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <h4 className="text-white font-medium mb-3 flex items-center">
+                  <Shield className="w-4 h-4 mr-2 text-blue-400" />
+                  Immutable Scam Records
+                </h4>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Latest Block Hash:</span>
+                    <span className="text-green-400 font-mono text-xs">0x7f8a...2b4d</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Records This Hour:</span>
+                    <span className="text-white">23</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Verification Time:</span>
+                    <span className="text-white">~4.5s</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Live Feed Item 4 */}
-              <div className="flex items-center space-x-4 p-4 bg-[#161616] rounded-lg border-l-4 border-green-500">
-                <div className="flex-shrink-0">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-2">
-                    <span className="text-green-400 font-semibold">RESOLVED</span>
-                    <span className="text-gray-400 text-sm">3 minutes ago</span>
-                    <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">Emergency Block</span>
+              {/* IPFS Storage */}
+              <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
+                <h4 className="text-white font-medium mb-3 flex items-center">
+                  <Brain className="w-4 h-4 mr-2 text-purple-400" />
+                  Decentralized Storage
+                </h4>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">IPFS Gateway:</span>
+                    <span className="text-green-400">🟢 Online</span>
                   </div>
-                  <p className="text-white text-sm">
-                    Emergency money request scam successfully blocked - 156 users protected
-                  </p>
-                  <div className="flex items-center space-x-4 mt-2 text-xs text-gray-400">
-                    <span>📍 Location: Global</span>
-                    <span>👥 Protected: 156 users</span>
-                    <span>💰 Saved: $45,230</span>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Storage Used:</span>
+                    <span className="text-white">2.8 GB</span>
                   </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-white font-bold">99.1%</div>
-                  <div className="text-gray-400 text-xs">Confidence</div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Retrieval Speed:</span>
+                    <span className="text-white">~150ms</span>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            {/* Recent Blockchain Activity */}
+            <div className="mt-6">
+              <h4 className="text-white font-medium mb-3">Recent Blockchain Activity</h4>
+              <div className="space-y-2">
+                <div className="bg-[#1a1a1a] p-3 rounded border border-[#2a2a2a] flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-sm text-gray-300">Scam report verified on-chain</span>
+                  </div>
+                  <span className="text-xs text-gray-400">2 min ago</span>
+                </div>
+                
+                <div className="bg-[#1a1a1a] p-3 rounded border border-[#2a2a2a] flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-sm text-gray-300">Identity attestation stored to IPFS</span>
+                  </div>
+                  <span className="text-xs text-gray-400">5 min ago</span>
+                </div>
+                
+                <div className="bg-[#1a1a1a] p-3 rounded border border-[#2a2a2a] flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-sm text-gray-300">Smart contract executed verification</span>
+                  </div>
+                  <span className="text-xs text-gray-400">8 min ago</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Blockchain Actions */}
+            <div className="mt-6 flex space-x-4">
+              <Button 
+                size="sm" 
+                className="bg-blue-500 hover:bg-blue-600 text-white"
+                onClick={() => window.open('https://mainnet-api.4160.nodely.dev', '_blank')}
+              >
+                <Shield className="w-4 h-4 mr-2" />
+                View on Algorand
+              </Button>
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-gray-600 text-white hover:bg-gray-700"
+                onClick={() => window.open('https://nodely.io/docs/public/ipfs/', '_blank')}
+              >
+                <Brain className="w-4 h-4 mr-2" />
+                IPFS Gateway
+              </Button>
             </div>
           </div>
         </div>
