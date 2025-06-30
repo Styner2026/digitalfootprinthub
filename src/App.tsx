@@ -532,15 +532,24 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <a href="#" className="text-white hover:text-green-400">
                 Home
               </a>
-              <a href="#" className="text-white hover:text-green-400">
+              <button 
+                onClick={() => scrollToSection('features')}
+                className="text-white hover:text-green-400 transition-colors cursor-pointer"
+              >
                 Features
-              </a>
-              <a href="#" className="text-white hover:text-green-400">
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-white hover:text-green-400 transition-colors cursor-pointer"
+              >
                 About
-              </a>
-              <a href="#" className="text-white hover:text-green-400">
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-white hover:text-green-400 transition-colors cursor-pointer"
+              >
                 Contact
-              </a>
+              </button>
             </nav>
           </div>
 
@@ -552,7 +561,8 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <Button
                 variant="outline"
                 size="sm"
-                className="border-gray-600 text-white bg-transparent text-xs h-7 whitespace-nowrap"
+                className="border-gray-600 text-white bg-transparent text-xs h-7 whitespace-nowrap hover:bg-gray-700 transition-colors cursor-pointer"
+                onClick={() => scrollToSection('global-alerts')}
               >
                 <Search className="w-3 h-3 mr-1" />
                 Global Footprint Alerts
