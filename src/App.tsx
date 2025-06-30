@@ -532,24 +532,32 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
               <a href="#" className="text-white hover:text-green-400">
                 Home
               </a>
-              <button 
+              <button
                 onClick={() => scrollToSection('features')}
                 className="text-white hover:text-green-400 transition-colors cursor-pointer"
               >
                 Features
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('about')}
                 className="text-white hover:text-green-400 transition-colors cursor-pointer"
               >
                 About
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-green-400 transition-colors cursor-pointer"
               >
                 Contact
               </button>
+              <a 
+                href="https://www.styner.dev/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-green-400 transition-colors"
+              >
+                My Website
+              </a>
             </nav>
           </div>
 
@@ -1176,7 +1184,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                         <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/20 animate-ping"></div>
                         <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/10 animate-ping animation-delay-150"></div>
                         <div className="absolute inset-0 w-28 h-28 rounded-full border-2 border-white/5 animate-ping animation-delay-300"></div>
-                        
+
                         {/* Logo */}
                         <img
                           src="https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/white_circle_360x360%20(2).png"
