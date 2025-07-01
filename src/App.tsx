@@ -20,8 +20,6 @@ import {
   Facebook,
   Instagram,
   RefreshCw,
-  Play,
-  Pause,
   User,
   ChevronDown,
   Brain,
@@ -46,11 +44,9 @@ export default function App() {
   // Avatar sidebar state
   // Dropdown states removed - display only
   // Audio stream removed - display only
-  const [currentLyricIndex, setCurrentLyricIndex] = useState(0)
-  const [currentSongVersion, setCurrentSongVersion] = useState(0)
+  const [currentSongVersion] = useState(0)
 
   // Audio player state
-  const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
 
   // FAQ dropdown state
@@ -76,75 +72,24 @@ export default function App() {
   const [isAvatarThinking] = useState(false)
   // Avatar chat ref removed - display only
 
-  // Audio control functions
-  const togglePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause()
-        setIsPlaying(false)
-      } else {
-        audioRef.current.play()
-        setIsPlaying(true)
-      }
-    }
-  }
+  // Audio control functions - removed unused function
 
-  // Handle audio ended
-  const handleAudioEnded = () => {
-    setIsPlaying(false)
-  }
 
+  // Update audio source when song version changes
   // Update audio source when song version changes
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.pause()
-      setIsPlaying(false)
       audioRef.current.load() // Reload the audio element with new source
     }
   }, [currentSongVersion])
 
-  // Song lyrics array for rotation
-  const songLyrics = [
-    {
-      verse: "� \"On a moonlit phone of midnight, your thumb begins to roam,\nPast cryptic grins and glamour pics that beckon from the gloam.\nA profile draped in velvet red—such charm, such eerie grace!\nBut run the checks before you text; beware that pale, cold face.\"",
-      attribution: "♪ Swipe of the Night - Verse 1 ♪"
-    },
-    {
-      verse: "💀 \"He sends a late-night coffin emoji—cute or something worse?\nRun that number through our scrying glass; expose the lurking curse.\nIf every post screams 'mortal coil,' if red flags start to creak,\nBolt the gate, delete the chat, don't be the midnight snack this week!\"",
-      attribution: "♪ Swipe of the Night - Verse 2 ♪"
-    },
-    {
-      verse: "🕯️ \"First date in a graveyard? Nice aesthetic—listen though:\nMeet where living humans stroll and CCTV can glow.\nPing your hunter-friends, share live-location on your map;\nKeep a getaway carriage waiting—never trust a batty chap!\"",
-      attribution: "♪ Swipe of the Night - Verse 3 ♪"
-    },
-    {
-      verse: "🦇 \"Keep your wits, clutch your garlic—don't date before you stake!\nDigital Footprint Hub reveals the phantoms that look fake.\nSwipe alive, stay alive—let the lantern light your way,\nFor love is sweet, but scams will bite and bleed your heart away!\"",
-      attribution: "♪ Swipe of the Night - Chorus ♪"
-    }
-  ]
-
-  // Song versions for audio guide navigation
-  const songVersions = [
-    {
-      name: "Acoustic Version",
-      description: "Gothic acoustic guitar with haunting vocals - perfect for intimate listening",
-      url: "https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/dfh-music/SwipeoftheNight.mp3"
-    },
-    {
-      name: "Electronic Version",
-      description: "Dark synthwave beats with vampire vibes - energetic club remix",
-      url: "https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/dfh-music/smooth-SwipeoftheNight.mp3"
-    }
-  ]
 
   // Rotate lyrics every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLyricIndex((prev) => (prev + 1) % songLyrics.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [songLyrics.length])
-
+  // Rotate lyrics every 4 seconds - removed unused functionality
+  // const interval = setInterval(() => {
+  //   setCurrentLyricIndex((prev) => (prev + 1) % songLyrics.length)
+  // }, 4000)
   // Data arrays removed - display only
 
   // Camera toggle functionality (removed - display only)
@@ -1561,7 +1506,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-[#1a1a1a] p-4 rounded-lg border border-[#2a2a2a]">
                 <div className="flex items-center justify-between">
                   <div>
@@ -1657,7 +1602,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                   </div>
                   <span className="text-xs text-gray-400">2 min ago</span>
                 </div>
-                
+
                 <div className="bg-[#1a1a1a] p-3 rounded border border-[#2a2a2a] flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -1665,7 +1610,7 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                   </div>
                   <span className="text-xs text-gray-400">5 min ago</span>
                 </div>
-                
+
                 <div className="bg-[#1a1a1a] p-3 rounded border border-[#2a2a2a] flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
@@ -1678,17 +1623,17 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
 
             {/* Blockchain Actions */}
             <div className="mt-6 flex space-x-4">
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="bg-blue-500 hover:bg-blue-600 text-white"
                 onClick={() => window.open('https://mainnet-api.4160.nodely.dev', '_blank')}
               >
                 <Shield className="w-4 h-4 mr-2" />
                 View on Algorand
               </Button>
-              <Button 
-                size="sm" 
-                variant="outline" 
+              <Button
+                size="sm"
+                variant="outline"
                 className="border-gray-600 text-white hover:bg-gray-700"
                 onClick={() => window.open('https://nodely.io/docs/public/ipfs/', '_blank')}
               >

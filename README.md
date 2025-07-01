@@ -34,30 +34,34 @@ Digital Footprint Hub is a revolutionary AI-powered platform that transforms per
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Git
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Styner2026/digitalfootprinthub.git
    cd digitalfootprinthub
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
 
 4. **Open your browser**
-   ```
+
+   ```text
    http://localhost:3000
    ```
 
@@ -71,18 +75,21 @@ npm run preview
 ## 🎨 Features Showcase
 
 ### 🔍 Investigation Dashboard
+
 - **Live Investigations** - Real-time cybersecurity monitoring
 - **Threat Intelligence** - CISA and FBI integration
 - **Risk Assessment** - NIST framework compliance
 - **Interactive Chat** - AI-powered investigation assistant
 
 ### 🛡️ Safety Tools
+
 - **Romance Scam Detection** - Protect yourself from online dating fraud
 - **Investment Verification** - Analyze financial opportunities
 - **Profile Authentication** - Verify social media accounts
 - **Background Checks** - Comprehensive person verification
 
 ### 🎵 Educational Content
+
 - **Safety Awareness** - Interactive learning modules
 - **Scam Prevention** - Community-driven alerts
 - **Best Practices** - Expert guidance and tips
@@ -105,7 +112,7 @@ npm run preview
 
 ## 📁 Project Structure
 
-```
+```text
 digitalfootprinthub/
 ├── public/
 │   ├── models/
@@ -220,8 +227,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Styner** - [@Styner2026](https://github.com/Styner2026)
-- Email: stynerdev.cs.dominican@gmail.com
-- LinkedIn: [Connect with me](https://linkedin.com/in/styner)
+
+- Email: [stynerdev.cs.dominican@gmail.com](mailto:stynerdev.cs.dominican@gmail.com)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/styner)
 
 ## 🙏 Acknowledgments
 
@@ -238,12 +246,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-
 **⭐ Star this repo if you find it helpful!**
 
 Made with ❤️ by [Styner](https://github.com/Styner2026)
 
 [🌐 Live Demo](https://digitalfootprinthub.vercel.app) • [📖 Documentation](https://github.com/Styner2026/digitalfootprinthub/wiki) • [🐛 Report Bug](https://github.com/Styner2026/digitalfootprinthub/issues)
-
-</div>
