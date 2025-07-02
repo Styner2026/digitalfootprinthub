@@ -4,7 +4,6 @@ import { Card, CardContent } from "./components/ui/card"
 import { Input } from "./components/ui/input"
 import { Separator } from "./components/ui/separator"
 import LiveBlockchainDashboard from "./components/LiveBlockchainDashboard"
-import { DetectiveWeaselAvatar } from "./components/DetectiveWeaselAvatar"
 import {
   Search,
   Plus,
@@ -1258,7 +1257,6 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                 </div>
               </div>
 
-              {/* Right Sidebar - AI Assistant Display */}
               <aside className="w-64 transition-all duration-300 ease-in-out border-l right-sidebar flex flex-col" onClick={(e) => e.stopPropagation()}>
                 <div className="right-sidebar-content flex flex-col h-full" onClick={(e) => e.stopPropagation()}>
                   <div className="ai-assistant-header p-4 border-b border-dark-bg-lighter">
@@ -1277,14 +1275,57 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                   {/* Avatar Display Section - Positioned lower but not at bottom */}
                   <div className="avatar-display-section p-4">
 
-                    {/* Detective Weasel Avatar with Enhanced Noir-Style Smoke Effects */}
-                    <div className="avatar-container mb-6 flex justify-center relative overflow-visible">
-                      {/* Using our enhanced DetectiveWeaselAvatar component with electric particles */}
-                      <DetectiveWeaselAvatar
-                        visible={true}
-                        assistantText={isThinking ? "..." : ""}
-                        className="w-full min-h-[350px]"
-                      />
+                    {/* Detective Weasel Avatar with Tesla Coil Effects */}
+                    <div className="avatar-container mb-6 flex justify-center">
+                      <div className="relative w-80 h-80">
+                        {/* Tesla Coil Base */}
+                        <div className="tesla-coil-base"></div>
+
+                        {/* Tesla Coil Arcs - simplified approach */}
+                        <div className="tesla-coil-1"></div>
+                        <div className="tesla-coil-2"></div>
+                        <div className="tesla-coil-3"></div>
+                        <div className="tesla-coil-4"></div>
+
+                        {/* Tesla Sparks */}
+                        <div className="tesla-spark-1"></div>
+                        <div className="tesla-spark-2"></div>
+                        <div className="tesla-spark-3"></div>
+                        <div className="tesla-spark-4"></div>
+
+                        {/* Energy Field */}
+                        <div className="tesla-energy-field"></div>                        {/* Dynamic Smoke System - From Detective's Feet */}
+                        <div className="smoke-container"></div>
+
+                        {/* Detective Weasel Avatar */}
+                        <img
+                          src="https://pub-b5d9a50f6cc04d78835c4d16883b5aea.r2.dev/dfh-assets/dfh-avator/2.Detective-Weasel-Avator.png"
+                          alt="Detective Weasel Avatar"
+                          className="w-80 h-80 relative z-10"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* AI Status Information */}
+                  <div className="ai-status-info mt-6 p-3 bg-gray-800/50 rounded-lg">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Brain className="w-4 h-4 text-green-400" />
+                      <span className="text-sm font-medium text-white">AI Intelligence Status</span>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs">
+                        <span className="text-gray-400">OSINT Analysis</span>
+                        <span className="text-green-400">Active</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-gray-400">Threat Detection</span>
+                        <span className="text-green-400">Ready</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-gray-400">Conversation</span>
+                        <span className="text-blue-400">Standby</span>
+                      </div>
                     </div>
                   </div>
 
@@ -1877,7 +1918,6 @@ Respond naturally like ChatGPT - mention specific tools when relevant, be helpfu
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
 
